@@ -7,9 +7,9 @@ export default function Question(
 ) {
     console.log(question, answer);
     return (
-        <div className="question">
+        <li className="question">
             <h3>Pergunta {index + 1}</h3>
             <ion-icon name="play-outline"></ion-icon>
-        </div>        
+        </li>        
     )
 }

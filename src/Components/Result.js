@@ -1,7 +1,7 @@
 export default function Result() {
     return (
-        <div className="result">
+        <footer className="result">
             <p>0/4 CONCLUÍDOS</p>
-        </div>
+        </footer>
     )
 }

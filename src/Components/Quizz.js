@@ -26,13 +26,15 @@ export default function Quizz () {
         <div className="quizz">
             <Brand />
 
-            {cards.map((card, index) => {
-                return <Question 
-                    index={index} 
-                    question={card.question} 
-                    answer={card.answer} 
-                />;
-            })}
+            <ul>
+                {cards.map((card, index) => {
+                    return <Question 
+                        index={index} 
+                        question={card.question} 
+                        answer={card.answer} 
+                    />;
+                })}
+            </ul>
 
             <Result />
         </div>
