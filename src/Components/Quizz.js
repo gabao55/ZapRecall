@@ -29,7 +29,7 @@ export default function Quizz () {
             <ul>
                 {cards.map((card, index) => {
                     return <Question 
-                        index={index} 
+                        index={index + 1} 
                         question={card.question} 
                         answer={card.answer} 
                     />;

@@ -41,7 +41,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
 .quizz .brand {
@@ -90,7 +89,33 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
+}
+
+.card {
+    padding: 18px 15px 6px 15px;
+    margin-bottom: 25px;
+    width: 300px;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FFFFD4;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+}
+
+.card p {
+    font-size: 18px;
+}
+
+.card ion-icon {
+    font-size: 30px;
+    margin-left: auto;
+}
+
+.question:last-child, .card:last-child {
+    margin-bottom: 120px;
 }
