@@ -1,3 +1,4 @@
+import React from "react";
 import Question from "./Question";
 import Brand from "./Brand";
 import Result from "./Result";
@@ -22,6 +23,8 @@ export default function Quizz () {
         },
     ];
 
+    const [results, setResults] = React.useState([null, null, null, null]);
+
     return (
         <div className="quizz">
             <Brand />
@@ -31,12 +34,14 @@ export default function Quizz () {
                     return <Question 
                         index={index + 1} 
                         question={card.question} 
-                        answer={card.answer} 
+                        answer={card.answer}
+                        results={results}
+                        setResults={setResults}
                     />;
                 })}
             </ul>
 
-            <Result />
+            <Result results={results} />
         </div>
     )
 }

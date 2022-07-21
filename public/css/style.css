@@ -116,6 +116,33 @@ h1 {
     margin-left: auto;
 }
 
+.zap-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.zap-buttons button {
+    width: 85px;
+    height: 37px;
+    padding: 0 12px;
+    font-size: 12px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+}
+
+.zap-buttons button[name="no"] {
+    background-color: #FF3030;
+}
+
+.zap-buttons button[name="maybe"] {
+    background-color: #FF922E;
+}
+
+.zap-buttons button[name="yes"] {
+    background-color: #2FBE34;
+}
+
 .question:last-child, .card:last-child {
     margin-bottom: 120px;
 }
