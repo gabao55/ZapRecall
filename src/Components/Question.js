@@ -41,32 +41,36 @@ function Card({
     setResults
 }) {
     const [showsAnswer, setShowsAnswer] = React.useState(false);
+
+    function responseNo () {
+        const newResults = [...results];
+        newResults[index-1] = "no";
+        setResults(newResults);
+    }
+
+    function responseMaybe () {
+        const newResults = [...results];
+        newResults[index-1] = "maybe";
+        setResults(newResults);
+    }
+
+    function responseYes () {
+        const newResults = [...results];
+        newResults[index-1] = "yes";
+        setResults(newResults);
+    }
+
     const zaps = (
         <>
             <div className="zap-buttons">
                 <button name="no" 
-                    onClick={() => {
-                            const newResults = [...results];
-                            newResults[index-1] = "no";
-                            setResults(newResults);
-                        }
-                    }
+                    onClick={responseNo}
                 >Não lembrei</button>
                 <button name="maybe" 
-                    onClick={() => {
-                            const newResults = [...results];
-                            newResults[index-1] = "maybe";
-                            setResults(newResults);
-                        }
-                    }
+                    onClick={responseMaybe}
                 >Quase não lembrei</button>
                 <button name="yes" 
-                    onClick={() => {
-                            const newResults = [...results];
-                            newResults[index-1] = "yes";
-                            setResults(newResults);
-                        }
-                    }
+                    onClick={responseYes}
                 >Zap!</button>
             </div>
         </>
