@@ -7,6 +7,7 @@ export default function Result({ results }) {
         <footer className="result">
             <p>{questionsWithResult}/4 CONCLUÍDOS</p>
             <div>
+                {/* TODO: Change colors from style to className attribute */}
                 {results.map((result) => {
                     if (result === "no") {
                         return <ion-icon name="close-circle" style={{ color: "#FF3030"}}></ion-icon>
