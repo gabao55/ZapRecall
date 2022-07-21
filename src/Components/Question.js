@@ -5,30 +5,48 @@ export default function Question(
         index,
         question,
         answer,
+        responded,
         results,
         setResults
     }
 ) {
-    console.log(question, answer);
 
     const [isTurned, setIsTurned] = React.useState(true);
 
     return (
         <>
             {isTurned 
-                ? <TurnedCard index={index} setIsTurned={setIsTurned} /> 
-                : <Card index={index} question={question} answer={answer} results={results} setResults={setResults} />
+                ? <TurnedCard index={index} results={results} setIsTurned={setIsTurned} /> 
+                : <Card index={index} question={question} answer={answer} results={results} setResults={setResults} setIsTurned={setIsTurned} />
             }
         </>      
     )
 }
 
-function TurnedCard({index , setIsTurned}) {
+function TurnedCard({index, results, setIsTurned}) {
+    function setIcon() {
+        console.log(results[index]);
+        switch (results[index-1]) {
+            case "no":
+                return "close-circle";
+            case "maybe":
+                return "help-circle";
+            case "yes":
+                return "checkmark-circle";
+            default:
+                // {/* TODO: Change this icon */}
+                return "play-outline";
+        }
+    }
+    const icon=setIcon();
+
     return (
-        <li key={index} className="question" onClick={() => setIsTurned(false)}>
+        <li key={index} 
+          className={`question ${results[index-1]}`}
+          onClick={() => results[index-1] ? null : setIsTurned(false) }
+        >
             <h3>Pergunta {index}</h3>
-            {/* TODO: Change this icon */}
-            <ion-icon name="play-outline"></ion-icon>
+            <ion-icon name={icon}></ion-icon>
         </li>
     )
 }
@@ -38,7 +56,8 @@ function Card({
     question,
     answer,
     results,
-    setResults
+    setResults,
+    setIsTurned
 }) {
     const [showsAnswer, setShowsAnswer] = React.useState(false);
 
@@ -64,13 +83,13 @@ function Card({
         <>
             <div className="zap-buttons">
                 <button name="no" 
-                    onClick={responseNo}
+                    onClick={() => {responseNo(); setIsTurned(true)}}
                 >Não lembrei</button>
                 <button name="maybe" 
-                    onClick={responseMaybe}
+                    onClick={() => {responseMaybe(); setIsTurned(true)}}
                 >Quase não lembrei</button>
                 <button name="yes" 
-                    onClick={responseYes}
+                    onClick={() => {responseYes(); setIsTurned(true)}}
                 >Zap!</button>
             </div>
         </>
