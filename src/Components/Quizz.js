@@ -23,6 +23,12 @@ export default function Quizz () {
         },
     ];
 
+    function shuffleArray(array) {
+        array.sort(() => Math.random() - 0.5);
+    }
+
+    shuffleArray(cards)
+
     const [results, setResults] = React.useState([null, null, null, null]);
 
     return (
