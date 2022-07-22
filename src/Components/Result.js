@@ -1,11 +1,17 @@
 export default function Result({ results }) {
     let questionsWithResult = 0;
+    let correctResults = 0;
 
-    results.map((result) => result ? questionsWithResult ++ : "");
+    results.map((result) => result ? questionsWithResult ++ : null);
+    results.map(result => (result === "yes" || result === "maybe") ? correctResults ++ : null);
 
     return (
         <footer className="result">
-            <p>{questionsWithResult}/4 CONCLUÍDOS</p>
+            {(questionsWithResult === results.length)
+              ? <ResultMessage correctResults={correctResults} questionsWithResult={questionsWithResult} />
+              : null
+            }
+            <p>{questionsWithResult}/{results.length} CONCLUÍDOS</p>
             <div>
                 {/* TODO: Change colors from style to className attribute */}
                 {results.map((result) => {
@@ -21,5 +27,25 @@ export default function Result({ results }) {
                 })}
             </div>
         </footer>
+    )
+}
+
+function ResultMessage({ correctResults, questionsWithResult }) {
+    const success = {
+        header: "🥳 Parabéns!",
+        message: "Você não esqueceu de nenhum flashcard!"
+    }
+    const failure = {
+        header: "😥  Putz...",
+        message: "Ainda faltam alguns... Mas não desanime!"
+    }
+
+    const message = (correctResults === questionsWithResult) ? success : failure;
+
+    return (
+        <div className="result-state">
+            <bold>{message.header}</bold>
+            <p>{message.message}!</p>
+        </div>
     )
 }

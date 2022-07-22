@@ -59,7 +59,11 @@ h1 {
     margin: 0 0 0 20px;
 }
 
-.question {
+.quizz ul {
+    margin-bottom: 80px;
+}
+
+.quizz ul li {
     width: 300px;
     height: 65px;
     padding: 0 15px;
@@ -85,7 +89,7 @@ h1 {
 
 footer {
     width: 100%;
-    height: 70px;
+    min-height: 70px;
     font-size: 18px;
     background-color: #FFFFFF;
     display: flex;
@@ -97,6 +101,10 @@ footer {
     left: 0;
 }
 
+footer > p {
+    margin-top: 15px;
+}
+
 footer div {
     margin-top: 5px;
     display: flex;
@@ -104,6 +112,7 @@ footer div {
 
 footer ion-icon {
     font-size: 23px;
+    margin-bottom: 10px;
 }
 
 .card {
@@ -123,8 +132,9 @@ footer ion-icon {
     font-size: 18px;
 }
 
-.card ion-icon {
-    font-size: 30px;
+.card img {
+    width: 30px;
+    height: 20px;
     margin-left: auto;
     cursor: pointer;
 }
@@ -174,4 +184,21 @@ footer ion-icon {
 .yes {
     color: #2FBE34;
     text-decoration-line: line-through;
+}
+
+.result-state {
+    width: 222px;
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-state bold {
+    font-weight: 700;
+    margin-bottom: 15px;
 }

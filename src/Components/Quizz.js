@@ -6,20 +6,36 @@ import Result from "./Result";
 export default function Quizz () {
     const cards = [
         {
-            question: "a",
-            answer: "Resposta a"
+            question: "O que é JSX?",
+            answer: "Uma extensão de linguagem do JavaScript"
         },
         {
-            question: "b",
-            answer: "Resposta b"
+            question: "O React é __",
+            answer: "uma biblioteca JavaScript para construção de interfaces"
         },
         {
-            question: "c",
-            answer: "Resposta c"
+            question: "Componentes devem iniciar com __",
+            answer: "letra maiúscula"
         },
         {
-            question: "d",
-            answer: "Resposta d"
+            question: "Podemos colocar __ dentro do JSX",
+            answer: "expressões"
+        },
+        {
+            question: "O ReactDOM nos ajuda __",
+            answer: "interagindo com a DOM para colocar componentes React na mesma"
+        },
+        {
+            question: "Usamos o npm para __",
+            answer: "gerenciar os pacotes necessários e suas dependências"
+        },
+        {
+            question: "Usamos props para __",
+            answer: "passar diferentes informações para componentes"
+        },
+        {
+            question: "Usamos estado (state) para __",
+            answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
         },
     ];
 
@@ -29,7 +45,7 @@ export default function Quizz () {
 
     shuffleArray(cards)
 
-    const [results, setResults] = React.useState([null, null, null, null]);
+    const [results, setResults] = React.useState([null, null, null, null, null, null, null, null]);
 
     return (
         <div className="quizz">

@@ -5,7 +5,6 @@ export default function Question(
         index,
         question,
         answer,
-        responded,
         results,
         setResults
     }
@@ -34,7 +33,6 @@ function TurnedCard({index, results, setIsTurned}) {
             case "yes":
                 return "checkmark-circle";
             default:
-                // {/* TODO: Change this icon */}
                 return "play-outline";
         }
     }
@@ -100,7 +98,7 @@ function Card({
             <p>{showsAnswer ? answer : question}</p>
             {showsAnswer
                 ? zaps
-                : <ion-icon name="arrow-forward" onClick={() => setShowsAnswer(true)}></ion-icon>
+                : <img src="./assets/arrow.png" alt="arrow to flip cards" onClick={() => setShowsAnswer(true)} />
             }
         </div>
     )
