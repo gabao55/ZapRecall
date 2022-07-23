@@ -1,17 +1,15 @@
-export default function Result({ results }) {
-    let questionsWithResult = 0;
+export default function Result({ numberOfCards, results }) {
     let correctResults = 0;
 
-    results.map((result) => result ? questionsWithResult ++ : null);
     results.map(result => (result === "yes" || result === "maybe") ? correctResults ++ : null);
 
     return (
         <footer className="result">
-            {(questionsWithResult === results.length)
-              ? <ResultMessage correctResults={correctResults} questionsWithResult={questionsWithResult} />
+            {(numberOfCards === results.length)
+              ? <ResultMessage correctResults={correctResults} questionsWithResult={numberOfCards} />
               : null
             }
-            <p>{questionsWithResult}/{results.length} CONCLUÍDOS</p>
+            <p>{results.length}/{numberOfCards} CONCLUÍDOS</p>
             <div>
                 {/* TODO: Change colors from style to className attribute */}
                 {results.map((result) => {

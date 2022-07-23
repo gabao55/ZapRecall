@@ -45,7 +45,7 @@ export default function Quizz () {
 
     shuffleArray(cards)
 
-    const [results, setResults] = React.useState([null, null, null, null, null, null, null, null]);
+    const [results, setResults] = React.useState([]);
 
     return (
         <div className="quizz">
@@ -63,7 +63,7 @@ export default function Quizz () {
                 })}
             </ul>
 
-            <Result results={results} />
+            <Result numberOfCards={cards.length} results={results} />
         </div>
     )
 }

@@ -61,19 +61,19 @@ function Card({
 
     function responseNo () {
         const newResults = [...results];
-        newResults[index-1] = "no";
+        newResults.push("no");
         setResults(newResults);
     }
 
     function responseMaybe () {
         const newResults = [...results];
-        newResults[index-1] = "maybe";
+        newResults.push("maybe");
         setResults(newResults);
     }
 
     function responseYes () {
         const newResults = [...results];
-        newResults[index-1] = "yes";
+        newResults.push("yes");
         setResults(newResults);
     }
 
