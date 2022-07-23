@@ -46,6 +46,7 @@ export default function Quizz () {
     shuffleArray(cards)
 
     const [results, setResults] = React.useState([]);
+    const [isCardSelected, setIsCardSelected] = React.useState(false);
 
     return (
         <div className="quizz">
@@ -59,6 +60,8 @@ export default function Quizz () {
                         answer={card.answer}
                         results={results}
                         setResults={setResults}
+                        isCardSelected={isCardSelected}
+                        setIsCardSelected={setIsCardSelected}
                     />;
                 })}
             </ul>

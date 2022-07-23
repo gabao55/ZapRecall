@@ -6,7 +6,9 @@ export default function Question(
         question,
         answer,
         results,
-        setResults
+        setResults,
+        isCardSelected,
+        setIsCardSelected
     }
 ) {
 
@@ -15,16 +17,15 @@ export default function Question(
     return (
         <>
             {isTurned 
-                ? <TurnedCard index={index} results={results} setIsTurned={setIsTurned} /> 
-                : <Card index={index} question={question} answer={answer} results={results} setResults={setResults} setIsTurned={setIsTurned} />
+                ? <TurnedCard index={index} results={results} setIsTurned={setIsTurned} isCardSelected={isCardSelected} setIsCardSelected={setIsCardSelected} /> 
+                : <Card question={question} answer={answer} results={results} setResults={setResults} setIsTurned={setIsTurned} setIsCardSelected={setIsCardSelected} />
             }
         </>      
     )
 }
 
-function TurnedCard({index, results, setIsTurned}) {
+function TurnedCard({index, results, setIsTurned, isCardSelected, setIsCardSelected}) {
     function setIcon() {
-        console.log(results[index]);
         switch (results[index-1]) {
             case "no":
                 return "close-circle";
@@ -38,10 +39,17 @@ function TurnedCard({index, results, setIsTurned}) {
     }
     const icon=setIcon();
 
+    function flipCard() {
+        if (!isCardSelected) {
+            setIsTurned(false);
+            setIsCardSelected(true);
+        }
+    }
+
     return (
         <li key={index} 
           className={`question ${results[index-1]}`}
-          onClick={() => results[index-1] ? null : setIsTurned(false) }
+          onClick={() => results[index-1] ? null : flipCard() }
         >
             <h3>Pergunta {index}</h3>
             <ion-icon name={icon}></ion-icon>
@@ -50,13 +58,14 @@ function TurnedCard({index, results, setIsTurned}) {
 }
 
 function Card({
-    index,
     question,
     answer,
     results,
     setResults,
-    setIsTurned
+    setIsTurned,
+    setIsCardSelected
 }) {
+    console.log(answer);
     const [showsAnswer, setShowsAnswer] = React.useState(false);
 
     function responseNo () {
@@ -77,17 +86,22 @@ function Card({
         setResults(newResults);
     }
 
+    function flipCard() {
+        setIsTurned(true);
+        setIsCardSelected(false);
+    }
+
     const zaps = (
         <>
             <div className="zap-buttons">
                 <button name="no" 
-                    onClick={() => {responseNo(); setIsTurned(true)}}
+                    onClick={() => {responseNo(); flipCard()}}
                 >Não lembrei</button>
                 <button name="maybe" 
-                    onClick={() => {responseMaybe(); setIsTurned(true)}}
+                    onClick={() => {responseMaybe(); flipCard()}}
                 >Quase não lembrei</button>
                 <button name="yes" 
-                    onClick={() => {responseYes(); setIsTurned(true)}}
+                    onClick={() => {responseYes(); flipCard()}}
                 >Zap!</button>
             </div>
         </>
