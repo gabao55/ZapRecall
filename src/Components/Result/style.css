@@ -1,0 +1,44 @@
+.result {
+    width: 100%;
+    min-height: 70px;
+    font-size: 18px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer > p {
+    margin-top: 15px;
+}
+
+footer div {
+    margin-top: 5px;
+    display: flex;
+}
+
+footer ion-icon {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.result-state {
+    width: 222px;
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-state b {
+    font-weight: 700;
+    margin-bottom: 15px;
+}

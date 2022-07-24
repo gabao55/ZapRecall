@@ -1,7 +1,8 @@
 import React from "react";
-import Question from "./Question";
-import Brand from "./Brand";
-import Result from "./Result";
+import Question from "../Question/Question";
+import Brand from "../Brand/Brand";
+import Result from "../Result/Result";
+import "./style.css"
 
 export default function Quizz () {
     const allcards = [

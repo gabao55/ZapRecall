@@ -1,0 +1,53 @@
+.quizz {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quizz ul {
+    margin-bottom: 80px;
+}
+
+.quizz ul li {
+    width: 300px;
+    height: 65px;
+    padding: 0 15px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.zap-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.zap-buttons button {
+    width: 85px;
+    height: 37px;
+    padding: 0 12px;
+    font-size: 12px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.zap-buttons button[name="no"] {
+    background-color: #FF3030;
+}
+
+.zap-buttons button[name="maybe"] {
+    background-color: #FF922E;
+}
+
+.zap-buttons button[name="yes"] {
+    background-color: #2FBE34;
+}

@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDom from "react-dom";
-import Home from "./Components/Home";
-import Quizz from "./Components/Quizz";
+import Home from "./Components/Home/Home";
+import Quizz from "./Components/Quizz/Quizz";
+import "./Components/Common/reset.css";
+import "./Components/Common/style.css";
 
 function App() {
 

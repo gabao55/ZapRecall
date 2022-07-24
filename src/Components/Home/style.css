@@ -1,0 +1,21 @@
+.home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home button {
+    width: 246px;
+    height: 54px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Recursive', sans-serif;
+    background-color: #ffffff;
+    color: #D70900;
+    border: 1px solid #D70900;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}

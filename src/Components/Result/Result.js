@@ -1,3 +1,5 @@
+import "./style.css";
+
 export default function Result({ numberOfCards, results }) {
     let correctResults = 0;
 

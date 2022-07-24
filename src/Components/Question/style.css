@@ -1,0 +1,13 @@
+.question h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.question ion-icon {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.question:last-child, .card:last-child {
+    margin-bottom: 120px;
+}

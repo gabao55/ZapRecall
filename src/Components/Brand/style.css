@@ -1,0 +1,14 @@
+.quizz .brand {
+    margin: 51px 0;
+    display: flex;
+    align-items: center;
+}
+
+.brand img {
+    width: 52px;
+    height: 60px;
+}
+
+.brand h1 {
+    margin: 0 0 0 20px;
+}

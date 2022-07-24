@@ -1,4 +1,6 @@
 import React from "react";
+import "./style.css";
+import flipIcon from "../assets/arrow.png"
 
 export default function Question(
     {
@@ -118,7 +120,7 @@ function Card({
             <p>{showsAnswer ? answer : question}</p>
             {showsAnswer
                 ? zaps
-                : <img src="./assets/arrow.png" alt="arrow to flip cards" onClick={() => setShowsAnswer(true)} />
+                : <img src={flipIcon} alt="arrow to flip cards" onClick={() => setShowsAnswer(true)} />
             }
         </div>
     )
