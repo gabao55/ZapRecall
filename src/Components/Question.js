@@ -3,8 +3,9 @@ import React from "react";
 export default function Question(
     {
         index,
-        question,
-        answer,
+        cardCounter,
+        setCardCounter,
+        cards,
         results,
         setResults,
         isCardSelected,
@@ -14,11 +15,12 @@ export default function Question(
 
     const [isTurned, setIsTurned] = React.useState(true);
 
+    // TODO: Bug de que quando escolho em ordens aleatórias os cards, as perguntas podem se repetir, tentar usar um contador para monitorar a pergunta correta e passar como props todas as perguntas ao invés de perguntas individuais
     return (
         <>
             {isTurned 
                 ? <TurnedCard index={index} results={results} setIsTurned={setIsTurned} isCardSelected={isCardSelected} setIsCardSelected={setIsCardSelected} /> 
-                : <Card question={question} answer={answer} results={results} setResults={setResults} setIsTurned={setIsTurned} setIsCardSelected={setIsCardSelected} />
+                : <Card cards={cards} cardCounter={cardCounter} setCardCounter={setCardCounter} results={results} setResults={setResults} setIsTurned={setIsTurned} setIsCardSelected={setIsCardSelected} />
             }
         </>      
     )
@@ -58,15 +60,18 @@ function TurnedCard({index, results, setIsTurned, isCardSelected, setIsCardSelec
 }
 
 function Card({
-    question,
-    answer,
+    cardCounter,
+    setCardCounter,
+    cards,
     results,
     setResults,
     setIsTurned,
     setIsCardSelected
 }) {
-    console.log(answer);
+    const answer = cards[cardCounter].answer;
+    const question = cards[cardCounter].question;
     const [showsAnswer, setShowsAnswer] = React.useState(false);
+
 
     function responseNo () {
         const newResults = [...results];
@@ -89,6 +94,7 @@ function Card({
     function flipCard() {
         setIsTurned(true);
         setIsCardSelected(false);
+        setCardCounter(cardCounter + 1);
     }
 
     const zaps = (

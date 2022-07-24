@@ -4,7 +4,7 @@ import Brand from "./Brand";
 import Result from "./Result";
 
 export default function Quizz () {
-    const cards = [
+    const allcards = [
         {
             question: "O que é JSX?",
             answer: "Uma extensão de linguagem do JavaScript"
@@ -43,10 +43,12 @@ export default function Quizz () {
         array.sort(() => Math.random() - 0.5);
     }
 
-    shuffleArray(cards)
+    shuffleArray(allcards);
+    const [cards, setCards] = React.useState([...allcards]);
 
     const [results, setResults] = React.useState([]);
     const [isCardSelected, setIsCardSelected] = React.useState(false);
+    const [cardCounter, setCardCounter] = React.useState(0);
 
     return (
         <div className="quizz">
@@ -55,9 +57,10 @@ export default function Quizz () {
             <ul>
                 {cards.map((card, index) => {
                     return <Question 
-                        index={index + 1} 
-                        question={card.question} 
-                        answer={card.answer}
+                        index={index + 1}
+                        cardCounter={cardCounter}
+                        setCardCounter={setCardCounter}
+                        cards={cards}
                         results={results}
                         setResults={setResults}
                         isCardSelected={isCardSelected}
