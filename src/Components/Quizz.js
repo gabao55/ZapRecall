@@ -44,7 +44,7 @@ export default function Quizz () {
     }
 
     shuffleArray(allcards);
-    const [cards, setCards] = React.useState([...allcards]);
+    const [cards] = React.useState([...allcards]);
 
     const [results, setResults] = React.useState([]);
     const [isCardSelected, setIsCardSelected] = React.useState(false);
@@ -57,6 +57,7 @@ export default function Quizz () {
             <ul>
                 {cards.map((card, index) => {
                     return <Question 
+                        key={index + 1}
                         index={index + 1}
                         cardCounter={cardCounter}
                         setCardCounter={setCardCounter}

@@ -15,12 +15,12 @@ export default function Result({ numberOfCards, results }) {
                 {results.map((result) => {
                     if (result === "no") {
                         return <ion-icon name="close-circle" style={{ color: "#FF3030"}}></ion-icon>
-                    }
-                    if (result === "maybe") {
+                    } else if (result === "maybe") {
                         return <ion-icon name="help-circle" style={{ color: "#FF922E"}}></ion-icon>
-                    }
-                    if (result === "yes") {
+                    } else if (result === "yes") {
                         return <ion-icon name="checkmark-circle" style={{ color: "#2FBE34"}}></ion-icon>
+                    } else {
+                        return null
                     }
                 })}
             </div>
@@ -42,7 +42,7 @@ function ResultMessage({ correctResults, questionsWithResult }) {
 
     return (
         <div className="result-state">
-            <bold>{message.header}</bold>
+            <b>{message.header}</b>
             <p>{message.message}!</p>
         </div>
     )

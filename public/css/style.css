@@ -198,7 +198,7 @@ footer ion-icon {
     align-items: center;
 }
 
-.result-state bold {
+.result-state b {
     font-weight: 700;
     margin-bottom: 15px;
 }
