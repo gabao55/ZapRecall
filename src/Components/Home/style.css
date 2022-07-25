@@ -20,7 +20,7 @@
     cursor: pointer;
 }
 
-.home input[type="text"] {
+.home input[type="number"] {
     box-sizing: border-box;
     width: 246px;
     height: 43px;
@@ -34,11 +34,11 @@
     border-radius: 5px;
 }
 
-.home input[type="text"]::placeholder {
+.home input[type="number"]::placeholder {
     color: #ADADAD;
 }
 
-.home input[type="text"]:focus {
+.home input[type="number"]:focus {
     outline: none;
 }
 
@@ -48,4 +48,14 @@
     color: #C0C0C0;
     background-color: #E8E8E8;
     pointer-events: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }

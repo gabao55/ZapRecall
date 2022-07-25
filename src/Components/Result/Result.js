@@ -4,6 +4,7 @@ export default function Result({
     numberOfCards,
     results,
     zapsGoal,
+    setZapsGoal,
     cards,
     shuffleArray,
     setCards,
@@ -20,6 +21,7 @@ export default function Result({
         setResults([]);
         setIsStarted(false);
         setCardCounter(0);
+        setZapsGoal(0);
     }
 
     return (
