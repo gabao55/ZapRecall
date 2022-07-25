@@ -21,7 +21,6 @@
 }
 
 .home input[type="number"] {
-    box-sizing: border-box;
     width: 246px;
     height: 43px;
     margin-bottom: 18px;

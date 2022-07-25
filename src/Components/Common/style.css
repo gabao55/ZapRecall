@@ -9,7 +9,9 @@ body {
 }
 
 * {
-    font-family: 'Recursive', sans-serif;}
+    box-sizing: border-box;
+    font-family: 'Recursive', sans-serif;
+}
 
 h1 {
     margin: 25px 0 42px 0;
