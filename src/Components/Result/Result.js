@@ -3,6 +3,7 @@ import "./style.css";
 export default function Result({ 
     numberOfCards,
     results,
+    zapsGoal,
     cards,
     shuffleArray,
     setCards,
@@ -24,7 +25,7 @@ export default function Result({
     return (
         <footer className="result">
             {(numberOfCards === results.length)
-              ? <ResultMessage correctResults={correctResults} questionsWithResult={numberOfCards} />
+              ? <ResultMessage correctResults={correctResults} zapsGoal={zapsGoal} />
               : null
             }
             <p>{results.length}/{numberOfCards} CONCLUÍDOS</p>
@@ -50,7 +51,7 @@ export default function Result({
     )
 }
 
-function ResultMessage({ correctResults, questionsWithResult }) {
+function ResultMessage({ correctResults, zapsGoal }) {
     const success = {
         header: "🥳 Parabéns!",
         message: "Você não esqueceu de nenhum flashcard!"
@@ -60,12 +61,12 @@ function ResultMessage({ correctResults, questionsWithResult }) {
         message: "Ainda faltam alguns... Mas não desanime!"
     }
 
-    const message = (correctResults === questionsWithResult) ? success : failure;
+    const message = (correctResults >= zapsGoal) ? success : failure;
 
     return (
         <div className="result-state">
             <b>{message.header}</b>
-            <p>{message.message}!</p>
+            <p>{message.message}</p>
         </div>
     )
 }

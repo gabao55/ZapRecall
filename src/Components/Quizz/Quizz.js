@@ -4,7 +4,7 @@ import Brand from "../Brand/Brand";
 import Result from "../Result/Result";
 import "./style.css"
 
-export default function Quizz ({ setIsStarted }) {
+export default function Quizz ({ setIsStarted, zapsGoal }) {
     const allcards = [
         {
             question: "O que é JSX?",
@@ -74,6 +74,7 @@ export default function Quizz ({ setIsStarted }) {
             <Result 
               numberOfCards={cards.length}
               results={results}
+              zapsGoal={zapsGoal}
               cards={cards}
               shuffleArray={shuffleArray}
               setCards={setCards}

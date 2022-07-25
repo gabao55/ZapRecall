@@ -8,10 +8,20 @@ import "./Components/Common/style.css";
 function App() {
 
     const [isStarted, setIsStarted] = React.useState(false);
+    const [zapsGoal, setZapsGoal] = React.useState(0);
 
     return (
         <>
-            {isStarted ? <Quizz setIsStarted={setIsStarted} /> : <Home setIsStarted={setIsStarted} />}
+            {isStarted 
+              ? <Quizz 
+                  setIsStarted={setIsStarted} 
+                  zapsGoal={zapsGoal}
+                />
+              : <Home
+                  setIsStarted={setIsStarted}
+                  zapsGoal={zapsGoal}
+                  setZapsGoal={setZapsGoal}
+                />}
         </>
     )
 }
