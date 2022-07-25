@@ -4,7 +4,7 @@ import Brand from "../Brand/Brand";
 import Result from "../Result/Result";
 import "./style.css"
 
-export default function Quizz () {
+export default function Quizz ({ setIsStarted }) {
     const allcards = [
         {
             question: "O que é JSX?",
@@ -45,7 +45,7 @@ export default function Quizz () {
     }
 
     shuffleArray(allcards);
-    const [cards] = React.useState([...allcards]);
+    const [cards, setCards] = React.useState([...allcards]);
 
     const [results, setResults] = React.useState([]);
     const [isCardSelected, setIsCardSelected] = React.useState(false);
@@ -71,7 +71,16 @@ export default function Quizz () {
                 })}
             </ul>
 
-            <Result numberOfCards={cards.length} results={results} />
+            <Result 
+              numberOfCards={cards.length}
+              results={results}
+              cards={cards}
+              shuffleArray={shuffleArray}
+              setCards={setCards}
+              setResults={setResults}
+              setIsStarted={setIsStarted}
+              setCardCounter={setCardCounter}
+            />
         </div>
     )
 }

@@ -1,9 +1,25 @@
 import "./style.css";
 
-export default function Result({ numberOfCards, results }) {
+export default function Result({ 
+    numberOfCards,
+    results,
+    cards,
+    shuffleArray,
+    setCards,
+    setResults,
+    setIsStarted,
+    setCardCounter
+}) {
     let correctResults = 0;
 
     results.map(result => (result === "yes" || result === "maybe") ? correctResults ++ : null);
+
+    function restartGame() {
+        setCards(shuffleArray(cards));
+        setResults([]);
+        setIsStarted(false);
+        setCardCounter(0);
+    }
 
     return (
         <footer className="result">
@@ -26,6 +42,10 @@ export default function Result({ numberOfCards, results }) {
                     }
                 })}
             </div>
+            {(numberOfCards === results.length)
+              ? <button onClick={restartGame} >REINICIAR RECALL</button>
+              : null
+            }
         </footer>
     )
 }

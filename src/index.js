@@ -11,7 +11,7 @@ function App() {
 
     return (
         <>
-            {isStarted ? <Quizz /> : <Home setIsStarted={setIsStarted} />}
+            {isStarted ? <Quizz setIsStarted={setIsStarted} /> : <Home setIsStarted={setIsStarted} />}
         </>
     )
 }

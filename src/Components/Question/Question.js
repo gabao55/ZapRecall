@@ -100,19 +100,17 @@ function Card({
     }
 
     const zaps = (
-        <>
-            <div className="zap-buttons">
-                <button name="no" 
-                    onClick={() => {responseNo(); flipCard()}}
-                >Não lembrei</button>
-                <button name="maybe" 
-                    onClick={() => {responseMaybe(); flipCard()}}
-                >Quase não lembrei</button>
-                <button name="yes" 
-                    onClick={() => {responseYes(); flipCard()}}
-                >Zap!</button>
-            </div>
-        </>
+        <div className="zap-buttons">
+            <button name="no" 
+                onClick={() => {responseNo(); flipCard()}}
+            >Não lembrei</button>
+            <button name="maybe" 
+                onClick={() => {responseMaybe(); flipCard()}}
+            >Quase não lembrei</button>
+            <button name="yes" 
+                onClick={() => {responseYes(); flipCard()}}
+            >Zap!</button>
+        </div>
     );
 
     return (
