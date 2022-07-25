@@ -17,7 +17,6 @@ export default function Question(
 
     const [isTurned, setIsTurned] = React.useState(true);
 
-    // TODO: Bug de que quando escolho em ordens aleatórias os cards, as perguntas podem se repetir, tentar usar um contador para monitorar a pergunta correta e passar como props todas as perguntas ao invés de perguntas individuais
     return (
         <>
             {isTurned 
