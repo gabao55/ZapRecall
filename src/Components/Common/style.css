@@ -7,6 +7,9 @@ body {
     color: #333333;
 }
 
+* {
+    font-family: 'Recursive', sans-serif;}
+
 h1 {
     margin: 25px 0 42px 0;
     font-size: 36px;

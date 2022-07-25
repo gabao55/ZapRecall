@@ -13,6 +13,7 @@
 }
 
 footer > p {
+    font-family: 'Recursive', sans-serif;
     margin-top: 15px;
 }
 
@@ -27,6 +28,7 @@ footer ion-icon {
 }
 
 .result-state {
+    font-family: 'Recursive', sans-serif;
     width: 222px;
     margin-top: 15px;
     font-size: 18px;
@@ -39,6 +41,20 @@ footer ion-icon {
 }
 
 .result-state b {
+    font-family: 'Recursive', sans-serif;
     font-weight: 700;
     margin-bottom: 15px;
+}
+
+button {
+    width: 167px;
+    height: 32px;
+    margin: 5px 0 21px 0;
+    font-size: 14px;
+    font-family: 'Recursive', sans-serif;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+    background-color: #FB6B6B;
+    cursor: pointer;
 }
